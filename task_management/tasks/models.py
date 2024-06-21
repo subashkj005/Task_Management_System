@@ -12,7 +12,7 @@ class Tasks(models.Model):
         ('PENDING', 'PENDING')
     )
     
-    id = models.UUIDField(primary_key=True, editable=False, null=False)
+    id = models.UUIDField(primary_key=True, editable=False, null=False, default=uuid4)
     title = models.CharField(max_length=255, blank=False, null=False)
     description = models.CharField(max_length=255, blank=False, null=False)
     due_date = models.DateField(default=date.today)
